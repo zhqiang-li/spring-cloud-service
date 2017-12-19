@@ -1,0 +1,21 @@
+server:
+  port: 7001
+
+spring:
+  application:
+    name: config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: http://gitbj.haihangyun.com/xiaolu.w/config-repo.git
+          searchPaths: config-server
+
+eureka:
+  instance:
+      prefer-ip-address: true
+  client:
+    service-url:
+      #defaultZone: http://10.120.0.74:8761/eureka/,http://10.120.0.75:8761/eureka/
+      defaultZone: http://localhost:8761/eureka/
+

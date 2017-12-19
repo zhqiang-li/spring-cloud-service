@@ -1,0 +1,63 @@
+server:
+  port: 5555
+
+spring:
+  application:
+    name: api-gateway
+
+hystrix:
+  command:
+    default:
+      execution:
+        timeout:
+          enabled: true
+        isolation:
+          thread:
+            timeoutInMilliseconds: 30000
+
+ribbon:
+  #MaxAutoRetries: 1
+  # Whether all operations can be retried for this client
+  #MaxAutoRetriesNextServer: 1
+  # Interval to refresh the server list from the source
+  #OkToRetryOnAllOperations: true
+  # Interval to refresh the server list from the source
+#  ServerListRefreshInterval: 2000
+  # Connect timeout used by Apache HttpClient
+  ConnectTimeout: 15000
+  # Read timeout used by Apache HttpClient
+  ReadTimeout: 15000
+
+zuul:
+  sensitiveHeaders: "*"
+  routes:
+    api-geninfo:
+      path: /api-geninfo/**
+      serviceId: BIM-GENERAL-INFORMATION
+    api-prodrun:
+      path: /api-prodrun/**
+      serviceId: BIM-PRODUCTION-RUN
+    api-efficiency:
+      path: /api-efficiency/**
+      serviceId: BIM-EFFICIENCY-MANAGEMENT
+    api-business:
+      path: /api-business/**
+      serviceId: BIM-BUSINESS-DEVELOPMENT
+    api-passenger:
+      path: /api-passenger/**
+      serviceId: BIM-PASSENGER-SERVICE
+    api-system:
+      path: /api-system/**
+      serviceId: BIM-SYSTEM-MANAGEMENT
+
+eureka:
+  instance:
+      prefer-ip-address: true
+      leaseRenewalIntervalInSeconds: 5
+  client:
+    service-url:
+      #defaultZone: http://10.120.0.74:8761/eureka/,http://10.120.0.75:8761/eureka/
+      defaultZone: http://127.0.0.1:8761/eureka/
+
+
+

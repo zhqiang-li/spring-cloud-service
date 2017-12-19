@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="bim-config-server" />
+        <module name="bim-eureka" />
+        <module name="bim-provider" />
+        <module name="bim-zuul" />
+        <module name="config-server" />
+        <module name="eureka-server" />
+        <module name="provider-server" />
+        <module name="zuul-server" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="bim-config-server" target="1.5" />
+      <module name="bim-eureka" target="1.5" />
+      <module name="bim-eureka-ha" target="1.5" />
+      <module name="bim-provider" target="1.5" />
+      <module name="bim-provider-2" target="1.5" />
+      <module name="bim-spring-cloud" target="1.8" />
+      <module name="bim-zuul" target="1.5" />
+      <module name="config-server" target="1.8" />
+      <module name="eureka-server" target="1.8" />
+      <module name="provider-server" target="1.8" />
+      <module name="spring-cloud-service" target="1.8" />
+      <module name="zuul-server" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

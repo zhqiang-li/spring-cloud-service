@@ -1,0 +1,20 @@
+server:
+  port: 8801
+
+spring:
+  application:
+    name: acdm-service
+#  cloud:
+#    config:
+#      discovery:
+#        enabled: true
+#        service-id: config-server
+#      profile: dev
+
+eureka:
+  instance:
+      prefer-ip-address: true
+  client:
+    service-url:
+      #defaultZone: http://10.120.0.74:8761/eureka/,http://10.120.0.75:8761/eureka/
+      defaultZone: http://localhost:8761/eureka/
